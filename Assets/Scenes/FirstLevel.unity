@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 426003191}
+  sprRenderer: {fileID: 426003188}
   speed: 6
 --- !u!50 &426003191
 Rigidbody2D:
