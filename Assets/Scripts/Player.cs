@@ -89,6 +89,7 @@ public class Player : MonoBehaviour
         {
            Instantiate(this.bulletPrefab, this.transform.position + spawnOffSet, Quaternion.identity);
             isShooting = true;
+            
         }
 
         if (isShooting)

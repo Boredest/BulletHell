@@ -10,14 +10,11 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         this.transform.position += Vector3.up * speed * Time.deltaTime;
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-      
-            Destroy(this.gameObject);
-       
+        Destroy(this.gameObject);
      
     }
 }
