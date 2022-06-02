@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3696865137470966475
 Transform:
   m_ObjectHideFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7bf26175d659a5f4e83cb69d430933cf, type: 3}
   - {fileID: 21300000, guid: 384ebbba21c82d740bb092bd07316e85, type: 3}
   - {fileID: 21300000, guid: 38624b16b90983e44a5b15cbc729324a, type: 3}
+  speed: 2
 --- !u!58 &3696865137470966474
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -110,7 +111,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

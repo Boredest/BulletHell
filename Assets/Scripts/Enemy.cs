@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private int sprArrSize = 4;
+    
     public Sprite[] sprites;
     private SpriteRenderer spriteRenderer;
     private int randomIndex;
+    public float speed = 3.0f;
    
 
 
@@ -25,8 +26,10 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        transform.position += Vector3.down * Time.deltaTime;
+        transform.position += Vector3.down * speed * Time.deltaTime;
     }
+
+ 
 
     //todo
     //col
