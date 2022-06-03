@@ -27,9 +27,20 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.down * speed * Time.deltaTime;
+        
     }
 
- 
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.CompareTag("Player") )
+        {
+            Destroy(coll.gameObject);
+            Destroy(this.gameObject);
+            //to do particle effect and score?
+        }
+
+    }
+
 
     //todo
     //col

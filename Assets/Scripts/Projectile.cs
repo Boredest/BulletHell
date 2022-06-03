@@ -6,17 +6,25 @@ public class Projectile : MonoBehaviour
 {
     public float speed = 20.0f;
     public Vector3 direction;
+    private float lifeTime;
 
     void Update()
     {
         this.transform.position += Vector3.up * speed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
+        if (coll.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(coll.gameObject);
+            Destroy(this.gameObject);
+        }
+           
   
-       Destroy(this.gameObject);
     }
 
-    
+
+
+
 }

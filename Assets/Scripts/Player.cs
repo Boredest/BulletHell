@@ -45,7 +45,8 @@ public class Player : MonoBehaviour
     private void Update()
     {
         checkInput();
-   
+      
+
     }//Update
 
     private void checkInput()
@@ -103,4 +104,6 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(shootDelay);
         isShooting = false;
     }
+
+  
 }

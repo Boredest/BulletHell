@@ -27,8 +27,8 @@ public class Object_Pool : MonoBehaviour
        
     }
 
-    // Update is called once per frame
-    void Update()
+ 
+    private void Update()
     {
        
     }
