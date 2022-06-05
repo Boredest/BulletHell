@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     public Projectile bulletPrefab;
     private Vector3 projectileOffset;
     private float bulletRespawn = 1.25f;
-    private float bulletStart = 2.0f;
+    private float bulletStart = 4.0f;
     
 
 
