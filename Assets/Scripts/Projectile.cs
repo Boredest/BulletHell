@@ -24,7 +24,8 @@ public class Projectile : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Enemy"))
         {
-            Destroy(coll.gameObject);
+
+            coll.gameObject.SetActive(false);
             Destroy(this.gameObject);
         }
 

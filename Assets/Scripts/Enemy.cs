@@ -11,8 +11,9 @@ public class Enemy : MonoBehaviour
     public float speed = 3.0f;
     public Projectile bulletPrefab;
     private Vector3 projectileOffset;
-    private float bulletRespawn = 1.25f;
+    private float bulletRespawn = 1.5f;
     private float bulletStart = 4.0f;
+    private bool isShooting = false;
     
 
 
@@ -34,6 +35,12 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.down * speed * Time.deltaTime;
+
+        if(transform.position.y < 7.0f)
+        {
+            isShooting = true;
+ 
+        }
         
     }
 
@@ -42,12 +49,12 @@ public class Enemy : MonoBehaviour
         if (coll.gameObject.CompareTag("Player"))
         {
             Destroy(coll.gameObject);
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
             //to do particle effect and score?
         }
         else
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
         
 
@@ -55,14 +62,16 @@ public class Enemy : MonoBehaviour
 
 
     private void FireProjectile()
-    {  
-        
-       Instantiate(this.bulletPrefab, this.transform.position + projectileOffset, Quaternion.identity);
+    {
+        if (isShooting)
+        {
+         Instantiate(this.bulletPrefab, this.transform.position + projectileOffset, Quaternion.identity);
+        }
+      
         
     }
 
 
     //todo
-    //shooting
     //hp?
 }

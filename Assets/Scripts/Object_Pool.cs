@@ -8,30 +8,20 @@ public class Object_Pool : MonoBehaviour
     private int poolStartSize = 8;
     public GameObject enemyPrefab;
     public Queue<GameObject> enemyPool = new Queue<GameObject>();
-    int ranX;
-    int ranY;
 
 
    private void Start()
     {
         for(int i = 0; i < poolStartSize; i++)
         {
-            ranX = Random.Range(-8, 8);
-            ranY = Random.Range(12, 24);
+            
             GameObject enemyShip = Instantiate(enemyPrefab);
-            enemyShip.transform.position = new Vector3(ranX, ranY, 0);
             enemyPool.Enqueue(enemyShip);
             enemyPrefab.SetActive(false);
-            GetEnemy();
+            
         }
        
-    }
-
- 
-    private void Update()
-    {
-       
-    }
+    }//Start
 
     public GameObject GetEnemy()
     {
@@ -44,8 +34,15 @@ public class Object_Pool : MonoBehaviour
         else
         {
 
-            GameObject enemyShip = Instantiate(enemyPrefab);
-            return enemyShip;
+           GameObject enemyShip = Instantiate(enemyPrefab);
+           return enemyShip;
         }
+    }//GetEnemy
+
+    public void returnEnemy(GameObject enemyShip)
+    {
+        enemyPool.Enqueue(enemyShip);
+        enemyShip.SetActive(false);
+
     }
 }

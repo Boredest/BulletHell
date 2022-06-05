@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     private Vector3 topEdge;
     private Vector3 bottomEdge;
     private Vector3 position;
-    private Vector3 spawnOffSet;
+    private Vector3 bulletSpawnOffSet;
 
     private bool isShooting;
     private float shootDelay = 0.25f;
@@ -30,14 +30,16 @@ public class Player : MonoBehaviour
     }//Awake
     void Start()
     {
-        Vector3 position = transform.position;
-        playerHalfWidth = sprRenderer.bounds.size.x / 2;
+        position = transform.position;
+        Debug.Log(position);
+       
+        playerHalfWidth = sprRenderer.bounds.size.y / 2;
         leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
         topEdge = Camera.main.ViewportToWorldPoint(Vector3.up);
         bottomEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         isShooting = false;
-        spawnOffSet = new Vector3(this.transform.position.x, this.transform.position.y + playerHalfWidth, 0.0f);
+        bulletSpawnOffSet = new Vector3(0.0f, this.transform.position.y + playerHalfWidth, 0.0f);
 
     }//Start
 
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         checkInput();
+
       
 
     }//Update
@@ -88,7 +91,7 @@ public class Player : MonoBehaviour
     {
         if (!isShooting)
         {
-           Instantiate(this.bulletPrefab, this.transform.position + spawnOffSet, Quaternion.identity);
+           Instantiate(this.bulletPrefab, this.transform.position + bulletSpawnOffSet, Quaternion.identity);
             isShooting = true;
             
         }
