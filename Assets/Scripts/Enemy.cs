@@ -9,7 +9,12 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private int randomIndex;
     public float speed = 3.0f;
-   
+    public Projectile bulletPrefab;
+    private Vector3 projectileOffset;
+    private float bulletRespawn = 1.25f;
+    private float bulletStart = 2.0f;
+    
+
 
 
 
@@ -20,8 +25,10 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        projectileOffset = new Vector3(0, -0.65f, 0);
         randomIndex = Random.Range(0, sprites.Length);
         spriteRenderer.sprite = sprites[randomIndex];
+        InvokeRepeating(nameof(FireProjectile), bulletStart, bulletRespawn);
     }
 
     void Update()
@@ -32,18 +39,30 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.CompareTag("Player") )
+        if (coll.gameObject.CompareTag("Player"))
         {
             Destroy(coll.gameObject);
             Destroy(this.gameObject);
             //to do particle effect and score?
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        
 
     }
 
 
+    private void FireProjectile()
+    {  
+        
+       Instantiate(this.bulletPrefab, this.transform.position + projectileOffset, Quaternion.identity);
+        
+    }
+
+
     //todo
-    //col
     //shooting
     //hp?
 }

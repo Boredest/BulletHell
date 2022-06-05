@@ -17,7 +17,7 @@ public class Object_Pool : MonoBehaviour
         for(int i = 0; i < poolStartSize; i++)
         {
             ranX = Random.Range(-8, 8);
-            ranY = Random.Range(8, 20);
+            ranY = Random.Range(12, 24);
             GameObject enemyShip = Instantiate(enemyPrefab);
             enemyShip.transform.position = new Vector3(ranX, ranY, 0);
             enemyPool.Enqueue(enemyShip);
