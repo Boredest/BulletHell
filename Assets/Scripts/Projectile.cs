@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public float speed = 20.0f;
     public Vector3 direction;
-    private float lifeTime = 7.0f;
+    private float lifeTime = 5.0f;
    
  
     private void Update()
@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
+    }//Update
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
@@ -39,7 +39,7 @@ public class Projectile : MonoBehaviour
             Destroy(this.gameObject);
         }
    
-    }
+    }//OnCol2D
 
 
 

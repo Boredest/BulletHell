@@ -17,12 +17,10 @@ public class Enemy : MonoBehaviour
     
 
 
-
-
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    }//Awake
 
     private void Start()
     {
@@ -30,19 +28,19 @@ public class Enemy : MonoBehaviour
         randomIndex = Random.Range(0, sprites.Length);
         spriteRenderer.sprite = sprites[randomIndex];
         InvokeRepeating(nameof(FireProjectile), bulletStart, bulletRespawn);
-    }
+    }//Start
 
-    void Update()
+    private void Update()
     {
         transform.position += Vector3.down * speed * Time.deltaTime;
 
-        if(transform.position.y < 7.0f)
+        if(transform.position.y < 8.5f)
         {
             isShooting = true;
  
         }
         
-    }
+    }//Update
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
@@ -58,7 +56,7 @@ public class Enemy : MonoBehaviour
         }
         
 
-    }
+    }//OnCol2D
 
 
     private void FireProjectile()
@@ -69,9 +67,12 @@ public class Enemy : MonoBehaviour
         }
       
         
-    }
+    }//FireProjectile
+
+    private void OnDisable()
+    {
+        isShooting = false;
+    }//OnDisable
 
 
-    //todo
-    //hp?
 }

@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 
    
 {
-    private float timeBetweenSpawn = 2.0f;
+    private float timeBetweenSpawn = 1.0f;
     private float timeSinceLastSpawn;
     private Object_Pool objectPool;
     private float xSpawn;

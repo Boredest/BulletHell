@@ -12,6 +12,7 @@ public class Object_Pool : MonoBehaviour
 
    private void Start()
     {
+        //Fill Pool and add to queue
         for(int i = 0; i < poolStartSize; i++)
         {
             
@@ -23,6 +24,7 @@ public class Object_Pool : MonoBehaviour
        
     }//Start
 
+   
     public GameObject GetEnemy()
     {
         if (enemyPool.Count > 0)
