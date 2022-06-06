@@ -5,12 +5,15 @@ using UnityEngine;
 public class Object_Pool : MonoBehaviour
 {
    
-    private int poolStartSize = 8;
+    public int poolStartSize = 10;
+    public int ufoPoolSize = 3;
     public GameObject enemyPrefab;
+    public GameObject ufoPrefab;
     public Queue<GameObject> enemyPool = new Queue<GameObject>();
+    public Queue<GameObject> ufoPool = new Queue<GameObject>();
 
 
-   private void Start()
+    private void Start()
     {
         //Fill Pool and add to queue
         for(int i = 0; i < poolStartSize; i++)
@@ -19,9 +22,18 @@ public class Object_Pool : MonoBehaviour
             GameObject enemyShip = Instantiate(enemyPrefab);
             enemyPool.Enqueue(enemyShip);
             enemyPrefab.SetActive(false);
-            
+         
         }
-       
+
+        for (int i = 0; i < ufoPoolSize; i++)
+        {
+
+            GameObject ufo = Instantiate(ufoPrefab);
+            ufoPool.Enqueue(ufo);
+            ufo.SetActive(false);
+           
+        }
+
     }//Start
 
    
@@ -46,5 +58,27 @@ public class Object_Pool : MonoBehaviour
         enemyPool.Enqueue(enemyShip);
         enemyShip.SetActive(false);
 
-    }
+    }//return Enemy
+
+    public GameObject GetUFO()
+    {
+        if (ufoPool.Count > 0)
+        {
+            GameObject ufo = ufoPool.Dequeue();
+            ufo.SetActive(true);
+            return ufo;
+        }
+
+        else
+        {
+            GameObject ufo = Instantiate(ufoPrefab);
+            return ufo;
+        }
+    }//GetUFO
+    public void returnUFO(GameObject ufo)
+    {
+        enemyPool.Enqueue(ufo);
+        ufo.SetActive(false);
+
+    }//return Enemy
 }

@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         position = transform.position;
-        Debug.Log(position);
+       
        
         playerHalfWidth = sprRenderer.bounds.size.y / 2;
         leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         topEdge = Camera.main.ViewportToWorldPoint(Vector3.up);
         bottomEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         isShooting = false;
-        bulletSpawnOffSet = new Vector3(0.0f, this.transform.position.y + playerHalfWidth, 0.0f);
+        bulletSpawnOffSet = new Vector3(0.0f, this.transform.position.y + playerHalfWidth + 0.25f, 0.0f);
 
     }//Start
 
@@ -47,8 +47,6 @@ public class Player : MonoBehaviour
     private void Update()
     {
         checkInput();
-
-      
 
     }//Update
 

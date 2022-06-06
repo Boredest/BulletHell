@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        projectileOffset = new Vector3(0, -0.65f, 0);
+        projectileOffset = new Vector3(0, -0.75f, 0);
         randomIndex = Random.Range(0, sprites.Length);
         spriteRenderer.sprite = sprites[randomIndex];
         InvokeRepeating(nameof(FireProjectile), bulletStart, bulletRespawn);
