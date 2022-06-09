@@ -11,15 +11,17 @@ public class Spawner : MonoBehaviour
     private float timeSinceLastUFOSpawn;
     private float timeBetweenUFOSpawn = 5.0f;
     private Object_Pool objectPool;
+    public Object_Pool ufoPool;
     private float xSpawn;
     private float ySpawn;
     private float ufoxSpawn;
+    
 
-
+ 
     void Start()
     {
         objectPool = FindObjectOfType<Object_Pool>();
-       
+           
 
     }
 
@@ -29,23 +31,22 @@ public class Spawner : MonoBehaviour
         timeSinceLastUFOSpawn += Time.deltaTime;
         if (timeSinceLastSpawn >= timeBetweenSpawn )
        {
-            Debug.Log(xSpawn);
+            
             xSpawn = Random.Range(-8, 8);
             ySpawn = Random.Range(12, 30);
-            GameObject enemyShip = objectPool.GetEnemy();
-            enemyShip.transform.position = new Vector3(xSpawn, ySpawn, 0);
+            if(objectPool.enemyPool.Count != 0)
+           {
+                
+                GameObject enemyShip = objectPool.GetEnemy();
+                enemyShip.transform.position = new Vector3(xSpawn, ySpawn, 0);
+                Debug.Log(enemyShip);
+           }
+  
             timeSinceLastSpawn = 0.0f;
 
         }
 
-        if(timeSinceLastUFOSpawn >= timeBetweenUFOSpawn )
-        {
-            xSpawn = Random.Range(-15, 20);
-            ySpawn = Random.Range(12, 30);
-            GameObject ufo = objectPool.GetUFO();
-            ufo.transform.position = new Vector3(xSpawn, ySpawn, 0);
-            timeSinceLastUFOSpawn = 0.0f;
 
-        }
+
     }
 }
