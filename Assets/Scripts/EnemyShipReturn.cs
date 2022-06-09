@@ -16,7 +16,7 @@ public class EnemyShipReturn : MonoBehaviour
     {
         if (objectPool != null)
         {
-            objectPool.returnEnemy(this.gameObject);
+            objectPool.ReturnEnemy(this.gameObject);
         }
     }
 

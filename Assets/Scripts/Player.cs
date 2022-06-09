@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     
     public SpriteRenderer sprRenderer;
     private float playerHalfWidth;
-    public float speed = 5.5f;
+    public float speed = 7.0f;
 
     public Projectile bulletPrefab;
 

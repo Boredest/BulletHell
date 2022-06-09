@@ -6,20 +6,19 @@ public class Object_Pool : MonoBehaviour
 {
    
     public int poolStartSize = 8;
-    
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     public Queue<GameObject> enemyPool = new Queue<GameObject>();
    
 
     private void Start()
     {
-
-        for (int i = 0; i < poolStartSize; i++)
+        
+        for (int i = 0; i < poolStartSize-1; i++)
         {
 
-            GameObject enemyShip = Instantiate(enemyPrefab);
+            GameObject enemyShip = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)]);
             enemyPool.Enqueue(enemyShip);
-            enemyPrefab.SetActive(false);
+            enemyShip.SetActive(false);
 
         }
        
@@ -45,12 +44,12 @@ public class Object_Pool : MonoBehaviour
        
     }//GetEnemy
 
-    public void returnEnemy(GameObject enemyShip)
+    public void ReturnEnemy(GameObject enemyShip)
     {
         enemyPool.Enqueue(enemyShip);
         enemyShip.SetActive(false);
 
-    }//return Enemy
+    }//ReturnEnemy
 
   
 }

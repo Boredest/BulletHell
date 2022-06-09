@@ -668,55 +668,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273960549b4fb5649a7a480b9519b049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolStartSize: 3
-  enemyPrefab: {fileID: 4150054966081609264, guid: 6105d476042672444be3f1b19baf5b95,
-    type: 3}
---- !u!1 &1592610060
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1592610062}
-  - component: {fileID: 1592610061}
-  m_Layer: 0
-  m_Name: ufoPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1592610061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592610060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273960549b4fb5649a7a480b9519b049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolStartSize: 3
-  enemyPrefab: {fileID: 3696865137470966486, guid: 5519636c7f03db64f86c35915a669f2d,
-    type: 3}
---- !u!4 &1592610062
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592610060}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 12, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  poolStartSize: 15
+  enemyPrefabs:
+  - {fileID: 3696865137470966486, guid: 5519636c7f03db64f86c35915a669f2d, type: 3}
+  - {fileID: 4150054966081609264, guid: 6105d476042672444be3f1b19baf5b95, type: 3}
+  - {fileID: 3696865137470966486, guid: 5519636c7f03db64f86c35915a669f2d, type: 3}
+  - {fileID: 3696865137470966486, guid: 5519636c7f03db64f86c35915a669f2d, type: 3}
 --- !u!1001 &1859641157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -778,6 +735,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610118516541120410, guid: 833d1b553ca2a6241a3090502a286eb6,
+        type: 3}
+      propertyPath: speed
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5610118516541120415, guid: 833d1b553ca2a6241a3090502a286eb6,
         type: 3}

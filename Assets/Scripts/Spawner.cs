@@ -11,10 +11,8 @@ public class Spawner : MonoBehaviour
     private float timeSinceLastUFOSpawn;
     private float timeBetweenUFOSpawn = 5.0f;
     private Object_Pool objectPool;
-    public Object_Pool ufoPool;
     private float xSpawn;
     private float ySpawn;
-    private float ufoxSpawn;
     
 
  
@@ -33,7 +31,7 @@ public class Spawner : MonoBehaviour
        {
             
             xSpawn = Random.Range(-8, 8);
-            ySpawn = Random.Range(12, 30);
+            ySpawn = Random.Range(12, 25);
             if(objectPool.enemyPool.Count != 0)
            {
                 
