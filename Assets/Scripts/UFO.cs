@@ -45,7 +45,7 @@ public class UFO : MonoBehaviour
     private void FindPlayer()
     {
           transform.position = Vector2.MoveTowards(transform.position, playerPos, step);
-    
-        
     }
+
+  
 }

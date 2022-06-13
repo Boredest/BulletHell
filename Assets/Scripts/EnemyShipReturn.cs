@@ -10,7 +10,7 @@ public class EnemyShipReturn : MonoBehaviour
     void Start()
     {
         objectPool = FindObjectOfType<Object_Pool>();
-    }
+    }//Start
 
     private void OnDisable()
     {
@@ -18,6 +18,6 @@ public class EnemyShipReturn : MonoBehaviour
         {
             objectPool.ReturnEnemy(this.gameObject);
         }
-    }
+    }//onDisable
 
 }

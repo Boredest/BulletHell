@@ -28,7 +28,7 @@ public class Object_Pool : MonoBehaviour
    
     public GameObject GetEnemy()
     {
-        Debug.Log(enemyPool.Count);
+       // Debug.Log(enemyPool.Count);
         if (enemyPool.Count <= poolStartSize)
         {
             GameObject enemyShip = enemyPool.Dequeue();

@@ -9,9 +9,9 @@ public class Player : MonoBehaviour
     private Vector3 rightEdge;
     private Vector3 topEdge;
     private Vector3 bottomEdge;
-    private Vector3 position;
+    public Vector3 position;
     private Vector3 bulletSpawnOffSet;
-
+    
     private bool isShooting;
     private float shootDelay = 0.25f;
    
@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         position = transform.position;
-       
        
         playerHalfWidth = sprRenderer.bounds.size.y / 2;
         leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
@@ -104,7 +103,9 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(shootDelay);
         isShooting = false;
-    }
+    }//ResetShot
 
-  
+    
+
+
 }

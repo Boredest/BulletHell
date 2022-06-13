@@ -42,21 +42,7 @@ public class Enemy : MonoBehaviour
         
     }//Update
 
-    private void OnCollisionEnter2D(Collision2D coll)
-    {
-        if (coll.gameObject.CompareTag("Player"))
-        {
-            Destroy(coll.gameObject);
-            this.gameObject.SetActive(false);
-            //to do particle effect and score?
-        }
-        else
-        {
-            this.gameObject.SetActive(false);
-        }
-        
-
-    }//OnCol2D
+   
 
 
     private void FireProjectile()

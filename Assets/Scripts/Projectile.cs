@@ -7,11 +7,11 @@ public class Projectile : MonoBehaviour
     public float speed = 20.0f;
     public Vector3 direction;
     private float lifeTime = 5.0f;
-  
+    
 
     private void Awake()
     {
-      
+    
     }//Awake
 
     private void Update()
@@ -25,11 +25,7 @@ public class Projectile : MonoBehaviour
         }
     }//Update
 
-    private void FixedUpdate()
-    {
-        
-    }//FixedUpdate
-
+  
     private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.CompareTag("Enemy"))
@@ -39,11 +35,6 @@ public class Projectile : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        else if (coll.gameObject.CompareTag("Player"))
-        {
-            Destroy(coll.gameObject);
-            Destroy(this.gameObject);
-        }
 
         else if (coll.gameObject.CompareTag("UFO"))
         {
