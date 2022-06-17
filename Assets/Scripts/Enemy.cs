@@ -42,8 +42,6 @@ public class Enemy : MonoBehaviour
         
     }//Update
 
-   
-
 
     private void FireProjectile()
     {
@@ -59,6 +57,11 @@ public class Enemy : MonoBehaviour
     {
         isShooting = false;
     }//OnDisable
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        this.gameObject.SetActive(false);
+    }
 
 
 }

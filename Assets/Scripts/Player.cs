@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     
     private bool isShooting;
     private float shootDelay = 0.25f;
+    public bool poweredUp;
    
     
     public SpriteRenderer sprRenderer;
@@ -88,8 +89,13 @@ public class Player : MonoBehaviour
     {
         if (!isShooting)
         {
-           Instantiate(this.bulletPrefab, this.transform.position + bulletSpawnOffSet, Quaternion.identity);
+            if (poweredUp)
+            {
+
+            }
             isShooting = true;
+            Instantiate(this.bulletPrefab, this.transform.position + bulletSpawnOffSet, Quaternion.identity);
+            
             
         }
 

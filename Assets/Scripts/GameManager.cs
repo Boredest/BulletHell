@@ -22,15 +22,7 @@ public class GameManager : MonoBehaviour
        
     }
 
-    private void GameOver()
-    {
-        Debug.Log("Game Over!");
-    }//GameOver
-
-    public void PlayerReset(Player player)
-    {
-        player.gameObject.SetActive(true);
-    }
+   
 
    
 
